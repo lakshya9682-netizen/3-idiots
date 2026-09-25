@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3 Idiots Garden Cafe | Lucknow</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --green: #163f32;
+      --dark-green: #0d2b22;
+      --cream: #fffaf0;
+      --gold: #d99b42;
+      --orange: #c96e3b;
+      --text: #24352e;
+      --muted: #6c776f;
+      --white: #ffffff;
+      --shadow: 0 15px 40px rgba(22, 63, 50, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    .btn {
+      display: inline-block;
+      border: none;
+      border-radius: 50px;
+      background: var(--gold);
+      color: var(--dark-green);
+      padding: 14px 25px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      background: #efb45c;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      color: white;
+      margin-left: 10px;
+    }
+
+    .btn-outline:hover {
+      background: white;
+      color: var(--green);
+    }
+
+    header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 9;
+      padding: 22px 0;
+      color: white;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: "Playfair Display", serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+    }
+
+    .logo-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--gold);
+      color: var(--dark-green);
+      font-size: 1.1rem;
+      font-weight: 800;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      font-size: 0.96rem;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 0;
+      background: transparent;
+      color: white;
+      font-size: 1.7rem;
+      cursor: pointer;
+    }
+
+    .hero {
+      min-height: 760px;
+      display: flex;
+      align-items: center;
+      color: white;
+      background:
+        linear-gradient(90deg, rgba(8, 35, 26, .88), rgba(8, 35, 26, .45)),
+        url("https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=1800&q=85")
+        center/cover no-repeat;
+    }
+
+    .hero-content {
+      max-width: 700px;
+      padding-top: 70px;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: "Playfair Display", serif;
+      line-height: 1.12;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 8vw, 6rem);
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 560px;
+      color: #f0f4ef;
+      font-size: 1.1rem;
+      margin-bottom: 28px;
+    }
+
+    .rating {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 28px;
+      font-size: 0.95rem;
+    }
+
+    .stars {
+      color: var(--gold);
+      letter-spacing: 2px;
+    }
+
+    section {
+      padding: 95px 0;
+    }
+
+    .section-heading {
+      max-width: 680px;
+      margin-bottom: 42px;
+    }
+
+    .section-heading h2 {
+      color: var(--green);
+      font-size: clamp(2.3rem, 5vw, 3.6rem);
+      margin-bottom: 15px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+    }
+
+    .intro {
+      background: white;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .intro-image {
+      height: 520px;
+      border-radius: 18px 100px 18px 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .intro-text h2 {
+      color: var(--green);
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      margin-bottom: 20px;
+    }
+
+    .intro-text p {
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .feature {
+      padding: 18px;
+      border-radius: 12px;
+      background: var(--cream);
+    }
+
+    .feature strong {
+      display: block;
+      color: var(--green);
+      margin-bottom: 6px;
+    }
+
+    .feature span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .menu-section {
+      background: #f4efe3;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .menu-card {
+      background: white;
+      padding: 25px 20px;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+      transition: 0.3s ease;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+
+    .menu-icon {
+      font-size: 2.1rem;
+      margin-bottom: 12px;
+    }
+
+    .menu-card h3 {
+      color: var(--green);
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+    }
+
+    .menu-card ul {
+      list-style: none;
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .menu-card li {
+      padding: 7px 0;
+      border-bottom: 1px dashed #d9dfd9;
+    }
+
+    .menu-card li:last-child {
+      border-bottom: 0;
+    }
+
+    .party-section {
+      background: #fffaf0;
+    }
+
+    .party-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .party-card {
+      padding: 30px 25px;
+      border-radius: 18px;
+      background: white;
+      box-shadow: 0 12px 30px rgba(22, 63, 50, 0.08);
+      text-align: center;
+      transition: 0.3s ease;
+    }
+
+    .party-card:hover {
+      transform: translateY(-7px);
+    }
+
+    .party-icon {
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+    }
+
+    .party-card h3 {
+      color: var(--green);
+      font-size: 1.7rem;
+      margin-bottom: 10px;
+    }
+
+    .party-card p {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .party-button {
+      padding: 11px 18px;
+      font-size: 0.9rem;
+    }
+
+    .ambiance {
+      background: var(--green);
+      color: white;
+    }
+
+    .ambiance-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .ambiance-card {
+      min-height: 340px;
+      display: flex;
+      align-items: flex-end;
+      padding: 25px;
+      border-radius: 14px;
+      overflow: hidden;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .ambiance-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,.8));
+    }
+
+    .ambiance-card > div {
+      position: relative;
+      z-index: 1;
+    }
+
+    .ambiance-card h3 {
+      font-size: 1.9rem;
+      margin-bottom: 4px;
+    }
+
+    .ambiance-card p {
+      color: #e4ece5;
+      font-size: 0.9rem;
+    }
+
+    .indoor {
+      background-image: url("https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=900&q=80");
+    }
+
+    .garden {
+      background-image: url("https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=900&q=80");
+    }
+
+    .evening {
+      background-image: url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=900&q=80");
+    }
+
+    .reviews-section {
+      background: #f4efe3;
+    }
+
+    .review-layout {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 45px;
+      align-items: start;
+    }
+
+    .overall-rating {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 25px;
+    }
+
+    .overall-rating strong {
+      color: var(--green);
+      font-family: "Playfair Display", serif;
+      font-size: 4rem;
+      line-height: 1;
+    }
+
+    .large-stars {
+      color: var(--gold);
+      font-size: 1.3rem;
+      letter-spacing: 3px;
+    }
+
+    .overall-rating span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .reviews-list {
+      display: grid;
+      gap: 15px;
+    }
+
+    .review-card {
+      padding: 20px;
+      border-radius: 14px;
+      background: white;
+      box-shadow: 0 7px 22px rgba(22, 63, 50, 0.07);
+    }
+
+    .review-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 8px;
+    }
+
+    .review-card h4 {
+      color: var(--green);
+      font-size: 1rem;
+    }
+
+    .review-stars {
+      color: var(--gold);
+      letter-spacing: 2px;
+    }
+
+    .review-card p {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .review-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      padding: 28px;
+      border-radius: 18px;
+      background: white;
+      box-shadow: var(--shadow);
+    }
+
+    .review-form h3 {
+      color: var(--green);
+      font-size: 1.8rem;
+    }
+
+    .review-form input[type="text"],
+    .review-form textarea {
+      width: 100%;
+      border: 1px solid #e2dfd5;
+      border-radius: 8px;
+      padding: 14px;
+      font: inherit;
+      outline: none;
+    }
+
+    .review-form textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .review-form input:focus,
+    .review-form textarea:focus {
+      border-color: var(--gold);
+    }
+
+    .star-rating {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      gap: 3px;
+    }
+
+    .star-rating p {
+      width: 100%;
+      color: var(--muted);
+      margin-bottom: 3px;
+    }
+
+    .star-rating label {
+      cursor: pointer;
+    }
+
+    .star-rating input {
+      display: none;
+    }
+
+    .star-rating span {
+      color: #d8d8d8;
+      font-size: 1.9rem;
+      transition: 0.2s ease;
+    }
+
+    .star-rating label:hover span,
+    .star-rating label:hover ~ label span,
+    .star-rating input:checked ~ span {
+      color: var(--gold);
+    }
+
+    .review-status {
+      color: #168044;
+      font-weight: 600;
+    }
+
+    .review-status.error {
+      color: #b52c2c;
+    }
+
+    .review-loading {
+      color: var(--muted);
+    }
+
+    .reservation {
+      background: white;
+    }
+
+    .reservation-box {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .reservation-info h2 {
+      color: var(--green);
+      font-size: clamp(2.3rem, 5vw, 3.7rem);
+      margin-bottom: 18px;
+    }
+
+    .reservation-info p {
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .contact-line {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      margin: 15px 0;
+    }
+
+    .contact-line span:first-child {
+      color: var(--orange);
+      font-size: 1.2rem;
+    }
+
+    .contact-line strong {
+      display: block;
+      color: var(--green);
+    }
+
+    .contact-line small {
+      color: var(--muted);
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      padding: 30px;
+      border-radius: 18px;
+      background: var(--cream);
+    }
+
+    form input,
+    form select,
+    form textarea {
+      width: 100%;
+      border: 1px solid #e2dfd5;
+      border-radius: 8px;
+      padding: 14px;
+      font: inherit;
+      color: var(--text);
+      background: white;
+      outline: none;
+    }
+
+    form input:focus,
+    form select:focus,
+    form textarea:focus {
+      border-color: var(--gold);
+    }
+
+    form textarea,
+    form .full {
+      grid-column: 1 / -1;
+    }
+
+    form textarea {
+      min-height: 95px;
+      resize: vertical;
+    }
+
+    .booking-status {
+      margin: 0;
+      font-weight: 600;
+    }
+
+    .booking-status.success {
+      color: #168044;
+    }
+
+    .booking-status.error {
+      color: #b52c2c;
+    }
+
+    footer {
+      background: var(--dark-green);
+      color: #dce8df;
+      text-align: center;
+      padding: 35px 0;
+    }
+
+    footer .logo {
+      justify-content: center;
+      margin-bottom: 12px;
+    }
+
+    footer p {
+      color: #aebeb3;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 850px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 4%;
+        right: 4%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 15px;
+        border-radius: 12px;
+        background: var(--dark-green);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 12px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .menu-grid,
+      .ambiance-grid,
+      .party-grid,
+      .intro-grid,
+      .reservation-box,
+      .review-layout,
+      form {
+        grid-template-columns: 1fr;
+      }
+
+      .intro-image {
+        height: 380px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      section {
+        padding: 70px 0;
+      }
+
+      .hero {
+        min-height: 680px;
+      }
+
+      .hero-content {
+        padding-top: 60px;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      form textarea,
+      form .full {
+        grid-column: auto;
+      }
+
+      .btn-outline {
+        margin: 12px 0 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="#home" class="logo">
+          <span class="logo-mark">3i</span>
+          <span>3 Idiots Garden Cafe</span>
+        </a>
+
+        <button class="menu-toggle" aria-label="Open menu">☰</button>
+
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#menu">Menu</a>
+          <a href="#parties">Celebrations</a>
+          <a href="#ambiance">Ambiance</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#reservation">Reservation</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <div class="eyebrow">A taste of happiness in Lucknow</div>
+          <h1>Eat. Laugh.<br />Repeat.</h1>
+          <p>
+            Delight in multi-cuisine vegetarian dining, lush garden ambience,
+            and warm hospitality at 3 Idiots Garden Cafe.
+          </p>
+
+          <a href="#menu" class="btn">Explore Our Menu</a>
+          <a href="#reservation" class="btn btn-outline">Book a Table</a>
+
+          <div class="rating">
+            <span class="stars">★★★★★</span>
+            <strong>4.2</strong>
+            <span>from 451 happy guests</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro" id="about">
+      <div class="container intro-grid">
+        <img
+          class="intro-image"
+          src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=85"
+          alt="Restaurant interior"
+        />
+
+        <div class="intro-text">
+          <div class="eyebrow">Good food, good vibes</div>
+          <h2>Your happy place for every mood.</h2>
+          <p>
+            3 Idiots Garden Cafe brings together diverse flavours, a relaxed
+            atmosphere, and memorable dining moments for families, friends,
+            and celebrations.
+          </p>
+          <p>
+            Whether you prefer cosy indoor seating or a peaceful outdoor garden
+            experience, we offer the perfect place for every occasion.
+          </p>
+
+          <div class="features">
+            <div class="feature">
+              <strong>100% Vegetarian</strong>
+              <span>Fresh ingredients and rich flavour</span>
+            </div>
+            <div class="feature">
+              <strong>Indoor & Outdoor</strong>
+              <span>Choose your perfect vibe</span>
+            </div>
+            <div class="feature">
+              <strong>Multi-Cuisine</strong>
+              <span>Indian, Italian, South Indian & Continental</span>
+            </div>
+            <div class="feature">
+              <strong>Garden Atmosphere</strong>
+              <span>Comfortable, welcoming and lively</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="menu-section" id="menu">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Flavours for everyone</div>
+          <h2>A menu full of delicious possibilities.</h2>
+          <p>
+            Vegetarian favourites from India and beyond, with comforting flavours,
+            fresh ingredients, and unforgettable taste.
+          </p>
+        </div>
+
+        <div class="menu-grid">
+          <article class="menu-card">
+            <div class="menu-icon">🍛</div>
+            <h3>Indian</h3>
+            <ul>
+              <li>Paneer Tikka</li>
+              <li>Dal Makhani</li>
+              <li>Veg Biryani</li>
+              <li>North Indian Thali</li>
+            </ul>
+          </article>
+
+          <article class="menu-card">
+            <div class="menu-icon">🍕</div>
+            <h3>Italian</h3>
+            <ul>
+              <li>Margherita Pizza</li>
+              <li>White Sauce Pasta</li>
+              <li>Arrabbiata Pasta</li>
+              <li>Garlic Bread</li>
+            </ul>
+          </article>
+
+          <article class="menu-card">
+            <div class="menu-icon">🥞</div>
+            <h3>South Indian</h3>
+            <ul>
+              <li>Masala Dosa</li>
+              <li>Idli Sambar</li>
+              <li>Medu Vada</li>
+              <li>Uttapam</li>
+            </ul>
+          </article>
+
+          <article class="menu-card">
+            <div class="menu-icon">🥗</div>
+            <h3>Continental</h3>
+            <ul>
+              <li>Veg Sizzler</li>
+              <li>Grilled Sandwich</li>
+              <li>Loaded Fries</li>
+              <li>Garden Salad</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="party-section" id="parties">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Celebrate with us</div>
+          <h2>Make every occasion delicious.</h2>
+          <p>
+            Whether it is a birthday, kitty party or a small gathering, our
+            indoor and outdoor spaces are made for joyful celebrations.
+          </p>
+        </div>
+
+        <div class="party-grid">
+          <article class="party-card">
+            <div class="party-icon">🎂</div>
+            <h3>Birthday Parties</h3>
+            <p>
+              A vibrant celebration with amazing food, warm service, and a
+              cheerful garden backdrop for your special day.
+            </p>
+            <button class="btn party-button" data-type="birthday">
+              Book Birthday Party
+            </button>
+          </article>
+
+          <article class="party-card">
+            <div class="party-icon">🌸</div>
+            <h3>Kitty Parties</h3>
+            <p>
+              Comfortable seating and a relaxed ambience make your kitty
+              gathering truly memorable and fun.
+            </p>
+            <button class="btn party-button" data-type="kitty">
+              Book Kitty Party
+            </button>
+          </article>
+
+          <article class="party-card">
+            <div class="party-icon">🎉</div>
+            <h3>Small Parties</h3>
+            <p>
+              Perfect for get-togethers, reunions, office meetings, and casual
+              celebrations with your close circle.
+            </p>
+            <button class="btn party-button" data-type="small-party">
+              Book Small Party
+            </button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="ambiance" id="ambiance">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Find your favourite corner</div>
+          <h2 style="color: white;">A beautiful setting for every occasion.</h2>
+          <p style="color: #dce8df;">
+            Enjoy the elegant indoor atmosphere or relax in our open-air garden
+            seating while dining with your loved ones.
+          </p>
+        </div>
+
+        <div class="ambiance-grid">
+          <div class="ambiance-card indoor">
+            <div>
+              <h3>Indoor Dining</h3>
+              <p>Elegant, cosy, and ideal for every gathering.</p>
+            </div>
+          </div>
+
+          <div class="ambiance-card garden">
+            <div>
+              <h3>Garden Cafe</h3>
+              <p>Fresh air, greenery, and relaxed outdoor dining.</p>
+            </div>
+          </div>
+
+          <div class="ambiance-card evening">
+            <div>
+              <h3>Evening Vibes</h3>
+              <p>Warm lights, lively conversations, and tasty meals.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reviews-section" id="reviews">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Guest experiences</div>
+          <h2>What our guests say.</h2>
+          <p>
+            Loved your time at 3 Idiots Garden Cafe? Share your experience and
+            help others discover the best dining spot in Lucknow.
+          </p>
+        </div>
+
+        <div class="review-layout">
+          <div>
+            <div class="overall-rating">
+              <strong>4.2</strong>
+              <div>
+                <div class="large-stars">★★★★★</div>
+                <span>Based on 451 ratings</span>
+              </div>
+            </div>
+
+            <div id="reviewsList" class="reviews-list">
+              <p class="review-loading">Loading guest reviews...</p>
+            </div>
+          </div>
+
+          <form id="reviewForm" class="review-form">
+            <h3>Share your experience</h3>
+
+            <input type="text" name="name" placeholder="Your name" required />
+
+            <div class="star-rating">
+              <p>Your rating</p>
+
+              <label>
+                <input type="radio" name="rating" value="5" required />
+                <span>★</span>
+              </label>
+
+              <label>
+                <input type="radio" name="rating" value="4" />
+                <span>★</span>
+              </label>
+
+              <label>
+                <input type="radio" name="rating" value="3" />
+                <span>★</span>
+              </label>
+
+              <label>
+                <input type="radio" name="rating" value="2" />
+                <span>★</span>
+              </label>
+
+              <label>
+                <input type="radio" name="rating" value="1" />
+                <span>★</span>
+              </label>
+            </div>
+
+            <textarea
+              name="experience"
+              placeholder="Tell us about your food, service and ambiance..."
+              required
+            ></textarea>
+
+            <button class="btn" type="submit">Submit Review</button>
+
+            <p id="reviewStatus" class="review-status"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="reservation" id="reservation">
+      <div class="container reservation-box">
+        <div class="reservation-info">
+          <div class="eyebrow">Come dine with us</div>
+          <h2>Reserve your table today.</h2>
+          <p>
+            Planning a family dinner, date, birthday or group celebration?
+            Reserve your preferred table at 3 Idiots Garden Cafe.
+          </p>
+
+          <div class="contact-line" id="contact">
+            <span>📍</span>
+            <div>
+              <strong>Find us</strong>
+              <small>
+                Grand Banquet, Kursi Rd, opposite Oceana,<br />
+                Lucknow, Uttar Pradesh 226026
+              </small>
+            </div>
+          </div>
+
+          <div class="contact-line">
+            <span>📞</span>
+            <div>
+              <strong>Call us</strong>
+              <small>97955 5535</small>
+            </div>
+          </div>
+        </div>
+
+        <form id="bookingForm">
+          <input type="hidden" id="bookingType" name="bookingType" value="table" />
+
+          <select id="bookingTypeSelect" name="bookingTypeSelect">
+            <option value="table">Regular Table Reservation</option>
+            <option value="birthday">Birthday Party</option>
+            <option value="kitty">Kitty Party</option>
+            <option value="small-party">Small Party</option>
+          </select>
+
+          <input type="text" name="name" placeholder="Your name" required />
+          <input type="tel" name="phone" placeholder="Phone number" required />
+          <input type="email" name="email" placeholder="Email address" />
+
+          <input type="date" name="date" required />
+          <select name="time" required>
+            <option value="">Select time</option>
+            <option>12:00 PM</option>
+            <option>1:00 PM</option>
+            <option>6:00 PM</option>
+            <option>7:00 PM</option>
+            <option>8:00 PM</option>
+            <option>9:00 PM</option>
+          </select>
+
+          <input
+            type="number"
+            name="guests"
+            min="1"
+            max="500"
+            placeholder="Number of guests"
+            required
+          />
+
+          <select name="seating">
+            <option value="">Preferred seating</option>
+            <option>Indoor seating</option>
+            <option>Outdoor garden seating</option>
+            <option>No preference</option>
+          </select>
+
+          <textarea
+            name="message"
+            placeholder="Any special request, decoration, cake, or food preference?"
+          ></textarea>
+
+          <button class="btn full" type="submit">Send Booking Request</button>
+
+          <p id="bookingStatus" class="booking-status full"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="logo">
+        <span class="logo-mark">3i</span>
+        <span>3 Idiots Garden Cafe</span>
+      </div>
+      <p>Multi-cuisine vegetarian restaurant with indoor and garden dining in Lucknow.</p>
+      <p style="margin-top: 8px;">© 2025 3 Idiots Garden Cafe. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+    const bookingForm = document.querySelector("#bookingForm");
+    const bookingType = document.querySelector("#bookingType");
+    const bookingTypeSelect = document.querySelector("#bookingTypeSelect");
+    const bookingStatus = document.querySelector("#bookingStatus");
+
+    toggle?.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+      });
+    });
+
+    fetch("/api/views", { method: "POST" })
+      .then(res => res.json())
+      .then(data => console.log("Page view count:", data.views))
+      .catch(err => console.error("View counter error:", err));
+
+    bookingTypeSelect.addEventListener("change", () => {
+      bookingType.value = bookingTypeSelect.value;
+    });
+
+    document.querySelectorAll(".party-button").forEach(button => {
+      button.addEventListener("click", () => {
+        const type = button.dataset.type;
+        bookingType.value = type;
+        bookingTypeSelect.value = type;
+
+        document.querySelector("#reservation").scrollIntoView({
+          behavior: "smooth"
+        });
+      });
+    });
+
+    bookingForm.addEventListener("submit", async event => {
+      event.preventDefault();
+
+      bookingStatus.textContent = "Sending your booking request...";
+      bookingStatus.className = "booking-status full";
+
+      const formData = new FormData(bookingForm);
+      const data = Object.fromEntries(formData.entries());
+
+      data.bookingType = bookingType.value;
+      data.guests = Number(data.guests);
+
+      try {
+        const response = await fetch("/api/bookings", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
+        if (!response.ok) {
+          throw new Error(result.message || "Unable to send booking request.");
+        }
+
+        bookingStatus.textContent =
+          `${result.message} Opening WhatsApp for the restaurant executive...`;
+        bookingStatus.className = "booking-status success full";
+
+        bookingForm.reset();
+        bookingType.value = "table";
+        bookingTypeSelect.value = "table";
+
+        window.open(result.whatsappUrl, "_blank");
+      } catch (error) {
+        bookingStatus.textContent = error.message;
+        bookingStatus.className = "booking-status error full";
+      }
+    });
+
+    const reviewForm = document.querySelector("#reviewForm");
+    const reviewsList = document.querySelector("#reviewsList");
+    const reviewStatus = document.querySelector("#reviewStatus");
+
+    function createStars(rating) {
+      return "★".repeat(rating) + "☆".repeat(5 - rating);
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function displayReviews(reviews) {
+      if (!reviews.length) {
+        reviewsList.innerHTML = `
+          <p class="review-loading">Be the first guest to share an experience.</p>
+        `;
+        return;
+      }
+
+      reviewsList.innerHTML = reviews.map(review => `
+        <article class="review-card">
+          <div class="review-card-header">
+            <h4>${escapeHtml(review.name)}</h4>
+            <span class="review-stars">${createStars(review.rating)}</span>
+          </div>
+          <p>${escapeHtml(review.experience)}</p>
+        </article>
+      `).join("");
+    }
+
+    async function loadReviews() {
+      try {
+        const response = await fetch("/api/reviews");
+        const result = await response.json();
+
+        if (!response.ok) {
+          throw new Error("Unable to load reviews.");
+        }
+
+        displayReviews(result.reviews);
+      } catch (error) {
+        reviewsList.innerHTML = `
+          <p class="review-loading">Reviews are temporarily unavailable.</p>
+        `;
+      }
+    }
+
+    reviewForm.addEventListener("submit", async event => {
+      event.preventDefault();
+
+      reviewStatus.textContent = "Submitting your review...";
+      reviewStatus.className = "review-status";
+
+      const formData = new FormData(reviewForm);
+      const data = Object.fromEntries(formData.entries());
+
+      data.rating = Number(data.rating);
+
+      try {
+        const response = await fetch("/api/reviews", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
+        if (!response.ok) {
+          throw new Error(result.message || "Unable to submit review.");
+        }
+
+        reviewStatus.textContent = result.message;
+        reviewStatus.className = "review-status";
+        reviewForm.reset();
+
+        await loadReviews();
+      } catch (error) {
+        reviewStatus.textContent = error.message;
+        reviewStatus.className = "review-status error";
+      }
+    });
+
+    loadReviews();
+  </script>
+</body>
+</html>

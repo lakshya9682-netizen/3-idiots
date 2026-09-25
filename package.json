@@ -1,0 +1,13 @@
+{
+  "name": "3-idiots-garden-cafe",
+  "version": "1.0.0",
+  "description": "3 Idiots Garden Cafe website with reservation and reviews backend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.7.0",
+    "express": "^4.21.2"
+  }
+}
